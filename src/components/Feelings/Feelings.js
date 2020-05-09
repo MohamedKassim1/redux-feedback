@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 
 export class Feelings extends Component {
-    handleClick = () =>{
+    state={
+        feeling: ''
+    }
+    handleClick = (e) =>{
         console.log(this.props);
         this.props.history.push('/understanding')
     }

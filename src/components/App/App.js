@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter, Route, Link } from 'react-router-dom';
+import {connect} from 'react-redux'
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
@@ -18,16 +19,16 @@ class App extends Component {
         </header>
         <br />
         <HashRouter>
-          <Route exact path="/" component={Feelings} />
-          <Route exact path="/understanding" component={Understanding} />
-          <Route exact path="/support" component={Support} />
-          <Route exact path="/comments" component={Comments} />
-          <Route exact path="/review" component={Review} />
+          <Route exact path="/" render={(props)=><Feelings {...props} dispatch={this.props.dispatch}/>}/>
+          <Route path="/understanding" render={(props)=><Understanding {...props} dispatch={this.props.dispatch}/>}/>
+          <Route path="/support" render={(props)=><Support {...props} dispatch={this.props.dispatch}/>} />
+          <Route path="/comments" render={(props)=><Comments {...props} dispatch={this.props.dispatch}/>}/>
+          <Route path="/review" render={(props)=> <Review {...props} dispatch ={this.props.dispatch}/>}/>
         </HashRouter>
         {/* <Feelings /> */}
       </div>
     );
   }
 }
-
-export default App;
+const reduxStateToProps = (reduxState) => ({reduxState});
+export default connect(reduxStateToProps)(App);
