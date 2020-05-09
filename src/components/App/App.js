@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-import { HashRouter, Route, Link } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 import {connect} from 'react-redux'
 import Feelings from '../Feelings/Feelings';
 import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
-import Comments from '../Review/Review';
+import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 
 class App extends Component {

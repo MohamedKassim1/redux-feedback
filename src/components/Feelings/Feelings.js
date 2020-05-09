@@ -4,7 +4,18 @@ export class Feelings extends Component {
     state={
         feeling: ''
     }
-    handleClick = (e) =>{
+    handleChange =(event)=>{
+        console.log('in handleChange', event.target.value)
+        this.setState({
+            feeling: event.target.value
+          })
+    }
+    handleClick = () =>{
+        console.log(this.props);
+        this.props.dispatch({
+            type: 'feelings',
+            payload: this.state.feeling
+        })
         console.log(this.props);
         this.props.history.push('/understanding')
     }
@@ -13,7 +24,7 @@ export class Feelings extends Component {
             <div>
                 <h3>How are you feeling today?</h3>
                 <p>Feelings?</p>
-                <input type="number" /> <button onClick={this.handleClick}>NEXT</button>
+                <input type="number" onChange={this.handleChange}/> <button onClick={this.handleClick}>NEXT</button>
 
             </div>
 
