@@ -5,10 +5,11 @@ export class Review extends Component {
         return (
             <div>
                 <h3>Review Your Feedback</h3>
-        {/* <p>{this.props.}</p> */}
+        <p>{JSON.stringify(this.props.reduxState)}</p>
             </div>
         )
     }
 }
 
+const reduxStateToProps = (reduxState) => ({reduxState});
 export default Review

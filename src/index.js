@@ -10,13 +10,13 @@ const reviewReducerInitialState = [];
 const myReviewReducer = (state = reviewReducerInitialState, action) => {
     console.log('myReviewReducer', state, action);
     if(action.type === 'feelings'){
-        state = [...state, action.payload]
+       return state = [...state, action.payload]
     }else if(action.type === 'understanding'){
-        state = [...state, action.payload]
+        return state = [...state, action.payload]
     }else if(action.type === 'support'){
-        state = [...state, action.payload]
+       return state = [...state, action.payload]
     }else if(action.type === 'comments'){
-        state = [...state, action.payload]
+       return state = [...state, action.payload]
     }else{
         return state;
     }
