@@ -5,14 +5,14 @@ class Review extends Component {
 
 
     handleSubmit = () => {
-        console.log('in handleclick overview')
+        console.log('in handleSubmit')
         axios.post('/submitReview', this.props.reduxState)
         .then(() => {
-            console.log('Submitted feedback: ', this.props.reduxState);
+            console.log('in POST: ', this.props.reduxState);
         })
         .catch((error) => {
             console.log('error with POST: ', error);
-            alert('Feedback cannot be submitted. Sorry, try again later.')
+            alert('Error with sending data. Please try again.')
         })
         this.props.history.push('/success')
     } //end handle click
