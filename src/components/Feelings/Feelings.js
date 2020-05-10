@@ -12,12 +12,17 @@ export class Feelings extends Component {
     }
     handleClick = () =>{
         console.log(this.props);
-        this.props.dispatch({
-            type: 'feelings',
-            payload: this.state.feeling
-        })
-        console.log(this.props);
-        this.props.history.push('/understanding')
+        if(this.state.feeling  < 0 || this.state.feeling > 5 || this.state.feeling == ''){
+            alert('please choose a number 1-5')
+            
+        }else{
+            this.props.dispatch({
+                type: 'feelings',
+                payload: this.state.feeling
+            })
+            console.log(this.props);
+            this.props.history.push('/understanding')
+        }
     }
     render() {
         return (

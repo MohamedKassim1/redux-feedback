@@ -14,11 +14,17 @@ export class Understanding extends Component {
     }
     
     handleClick = () =>{
-        this.props.dispatch({
-            type: 'understanding',
-            payload: this.state.understanding
-        })
-        this.props.history.push('/support')
+        if(this.state.understanding  < 0 || this.state.understanding > 5 || this.state.understanding == ''){
+            alert('please choose a number 1-5')
+            
+        }else{
+            this.props.dispatch({
+                type: 'understanding',
+                payload: this.state.understanding
+            })
+            this.props.history.push('/support')
+        }
+    
     }
     render() {
         return (

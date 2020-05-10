@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import './App.css';
 import { HashRouter, Route } from 'react-router-dom';
 import {connect} from 'react-redux'
@@ -8,6 +8,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import Success from '../Success/Success'
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path="/support" render={(props)=><Support {...props} dispatch={this.props.dispatch}/>} />
           <Route path="/comments" render={(props)=><Comments {...props} dispatch={this.props.dispatch}/>}/>
           <Route path="/review" render={(props)=> <Review {...props} dispatch ={this.props.dispatch} reduxState={this.props.reduxState}/>}/>
+          <Route path="/success" render={(props)=><Success {...props} dispatch={this.props.dispatch}/>}/>
         </HashRouter>
         {/* <Feelings /> */}
       </div>

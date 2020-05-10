@@ -12,6 +12,7 @@ export class Comments extends Component {
         
     }
     handleClick = () =>{
+
         this.props.dispatch({
             type: 'comments',
             payload: this.state.comment

@@ -10,11 +10,17 @@ export class Support extends Component {
         })
     }
     handleClick = () =>{
-        this.props.dispatch({
-            type: 'support',
-            payload: this.state.support
-        })
-        this.props.history.push('/comments')
+        if(this.state.support  < 0 || this.state.support > 5 || this.state.support == ''){
+            alert('please choose a number 1-5')
+            
+        }else {
+            this.props.dispatch({
+                type: 'support',
+                payload: this.state.support
+            })
+            this.props.history.push('/comments')
+        }
+     
     }
     render() {
         return (
